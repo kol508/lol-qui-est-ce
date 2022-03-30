@@ -1,11 +1,15 @@
 <div class="container">
   <h3 style="text-align:center">Qui est-ce ? <br>{{actual}}/{{total}}</h3>
 
-  <ng-container *ngFor="let tag of championTags">
-    <button type="button" class="btn btn-primary" (click)="deleteChampionsByType(tag)">{{tag}}</button>
-  </ng-container>
 
-  <app-champion class="row justify-content-center" style="margin-bottom: 10px" [champion]="playerChampion" [isPlayerChampion]="true"></app-champion>
+  <div class="d-flex justify-content-center mb-3">
+    <ng-container *ngFor="let tag of championTags">
+      <button type="button" class="btn btn-primary col-1" (click)="deleteChampionsByType(tag)">{{tag}}</button>
+    </ng-container>
+  </div>
+
+  <app-champion class="row justify-content-center" style="margin-bottom: 10px" [champion]="playerChampion"
+                [isPlayerChampion]="true"></app-champion>
 
   <div class="row">
     <ng-container *ngFor="let champion of champions">
