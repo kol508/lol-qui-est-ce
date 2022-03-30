@@ -1,0 +1,7 @@
+<div style="text-align: center;cursor:pointer;max-width:163px" class="card" (click)="deleteChampion()">
+  <img src="{{champion.imgUrl}}" alt="{{champion.name}}"/>
+  <ng-container *ngFor="let tag of champion.tags" >
+    <span>{{tag}}</span>
+  </ng-container>
+  <p>{{champion.name}}</p>
+</div>

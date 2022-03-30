@@ -1,0 +1,25 @@
+<div class="container">
+  <h3 style="text-align:center">Qui est-ce ? <br>{{actual}}/{{total}}</h3>
+
+  <ng-container *ngFor="let tag of championTags">
+    <button type="button" class="btn btn-primary" (click)="deleteChampionsByType(tag)">{{tag}}</button>
+  </ng-container>
+
+  <app-champion class="row justify-content-center" style="margin-bottom: 10px" [champion]="playerChampion" [isPlayerChampion]="true"></app-champion>
+
+  <div class="row">
+    <ng-container *ngFor="let champion of champions">
+      <app-champion class="col-2" [champion]="champion"></app-champion>
+    </ng-container>
+    <button class="btn btn-primary" (click)="resetChampions()">Reset</button>
+  </div>
+  <div class="row">
+    <h3 style="text-align:center">Deleted <br>{{total - actual}}/{{total}}</h3>
+    <button class="btn btn-primary" (click)="showDeletedChampion()">Show</button>
+    <ng-container *ngIf="isShowDeletedChampion === true">
+      <ng-container *ngFor="let champion of championsDeleted">
+        <app-champion class="col-2" [champion]="champion"></app-champion>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
